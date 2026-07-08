@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Found | TableMint</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="min-h-screen bg-stone-50 text-stone-950">
+    <%- include("partials/navbar") %>
+
+    <main class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 lg:px-10">
+        <p class="text-sm font-bold text-emerald-700">404</p>
+        <h1 class="mt-2 text-4xl font-black sm:text-5xl">That dish is not on the menu.</h1>
+        <p class="mt-5 text-base leading-7 text-stone-600">The page you opened does not match one of the dummy menu items.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a href="/menu" class="rounded-full bg-stone-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700">Back to menu</a>
+            <a href="/" class="rounded-full border border-stone-300 px-6 py-3 text-sm font-bold text-stone-700 transition hover:border-stone-950 hover:text-stone-950">Home</a>
+        </div>
+    </main>
+
+    <%- include("partials/footer") %>
+</body>
+</html>

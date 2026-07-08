@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Menu | TableMint</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+
+<body class="min-h-screen bg-stone-50 text-stone-950">
+    <%- include("partials/navbar") %>
+
+        <main>
+            <section class="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
+
+                <section class="">
+                    <div class="h-fit rounded-lg border border-stone-200 bg-white p-5 shadow-sm max-w-2xl mx-auto">
+                        <p class="text-sm font-bold text-emerald-700"><%- edit ? "Edit" : "Add" %> menu item</p>
+                        <h2 class="mt-1 text-2xl font-black">Static form preview</h2>
+                        <form action="<%- edit ? '/edit-menu' : '/submit-menu' %>" method="POST" class="mt-5 space-y-4">
+                            <input type="text" name="id" class="hidden mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100" value="<%- edit ? item.id : '' %>">
+                            <!-- Dish Name -->
+                            <label class="block">
+                                <span class="text-sm font-bold text-stone-700">Dish Name</span>
+                                <input type="text" name="name" placeholder="Truffle Mushroom Ramen" value="<%- edit ? item.name : "" %>"
+                                    class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                            </label>
+
+
+                            <!-- Category -->
+                            <label class="block">
+                                <span class="text-sm font-bold text-stone-700">Category</span>
+                                <select name="category" value="<%- edit ? item.category : "" %>"
+                                    class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                                    <option value="Main">Main</option>
+                                    <option value="Starter">Starter</option>
+                                    <option value="Dessert">Dessert</option>
+                                    <option value="Drink">Drink</option>
+                                </select>
+                            </label>
+
+                            <!-- Price & Prep Time -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <label class="block">
+                                    <span class="text-sm font-bold text-stone-700">Price</span>
+                                    <input type="text" name="price" placeholder="$18" value="<%- edit ? item.price : "" %>"
+                                        class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                                </label>
+
+                                <label class="block">
+                                    <span class="text-sm font-bold text-stone-700">Prep Time</span>
+                                    <input type="text" name="prepTime" placeholder="16 min" value="<%- edit ? item.prepTime : "" %>"
+                                        class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                                </label>
+                            </div>
+
+                            <!-- Status -->
+                            <label class="block">
+                                <span class="text-sm font-bold text-stone-700">Status</span>
+                                <select name="status" value="<%- edit ? item.status : "" %>"
+                                    class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                                    <option value="Available">Available</option>
+                                    <option value="Out of Stock">Out of Stock</option>
+                                    <option value="Coming Soon">Coming Soon</option>
+                                </select>
+                            </label>
+
+                            <!-- Image URL -->
+                            <label class="block">
+                                <span class="text-sm font-bold text-stone-700">Image URL</span>
+                                <input type="url" name="image" placeholder="https://example.com/image.jpg" value="<%- edit ? item.image : "" %>"
+                                    class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                            </label>
+
+                            <!-- Short Description -->
+                            <label class="block">
+                                <span class="text-sm font-bold text-stone-700">Description</span>
+                                <textarea name="description" rows="3" placeholder="Silky broth, roasted mushrooms..."  
+                                    class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"><%- edit ? item.description : "" %></textarea>
+                            </label>
+
+                            <!-- Full Detail -->
+                            <label class="block">
+                                <span class="text-sm font-bold text-stone-700">Detail</span>
+                                <textarea name="detail" rows="5"
+                                    placeholder="A deep umami bowl built for dinner service..." 
+                                    class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"><%- edit ? item.detail : "" %></textarea>
+                            </label>
+
+                            <!-- Tags -->
+                            <label class="block">
+                                <span class="text-sm font-bold text-stone-700">Tags</span>
+                                <input type="text" name="tags" placeholder="Vegetarian, Chef special, Umami" value="<%- edit ? item.tags : "" %>"
+                                    class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                                <p class="mt-1 text-xs text-stone-500">
+                                    Separate tags with commas.
+                                </p>
+                            </label>
+
+                            <button type="submit"
+                                class="w-full rounded-lg bg-stone-950 px-5 py-3 text-sm font-bold text-white">
+                                <%- edit ? "Update" : "Add" %>  Menu Item
+                            </button>
+
+                        </form>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <%- include("partials/footer") %>
+</body>
+
+</html>

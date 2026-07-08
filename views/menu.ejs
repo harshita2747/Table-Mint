@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | TableMint</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="min-h-screen bg-stone-50 text-stone-950">
+    <%- include("partials/navbar") %>
+
+    <main>
+        <section class="bg-white">
+            <div class="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
+                <p class="text-sm font-bold text-emerald-700">Full menu</p>
+                <div class="mt-2 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <h1 class="text-4xl font-black sm:text-5xl">Choose your table favorites.</h1>
+                        <p class="mt-4 max-w-2xl text-base leading-7 text-stone-600">From starters to desserts — explore everything we've got.</p>
+                    </div>
+                    <a href="/reservation" class="w-fit rounded-full bg-stone-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700">Reserve after browsing</a>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-2">
+                    <span class="rounded-full bg-stone-950 px-4 py-2 text-sm font-bold text-white">All</span>
+                    <span class="rounded-full border border-stone-300 px-4 py-2 text-sm font-bold text-stone-700">Starter</span>
+                    <span class="rounded-full border border-stone-300 px-4 py-2 text-sm font-bold text-stone-700">Main</span>
+                    <span class="rounded-full border border-stone-300 px-4 py-2 text-sm font-bold text-stone-700">Dessert</span>
+                    <span class="rounded-full border border-stone-300 px-4 py-2 text-sm font-bold text-stone-700">Drink</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10">
+            <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                <% menuItems.forEach((item) => { %>
+                    <article class="rounded-lg border border-stone-200 bg-white shadow-sm">
+                        <a href="/menu/<%= item.slug %>">
+                            <img src="<%= item.image %>" alt="<%= item.name %>" class="h-48 w-full rounded-t-lg object-cover">
+                        </a>
+                        <div class="p-5">
+                            <div class="flex items-start justify-between gap-4">
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700"><%= item.category %></p>
+                                    <h2 class="mt-2 text-xl font-black"><a href="/menu/<%= item.slug %>" class="hover:text-emerald-700"><%= item.name %></a></h2>
+                                </div>
+                                <p class="text-lg font-black"><%= item.price %></p>
+                            </div>
+                            <p class="mt-3 text-sm leading-6 text-stone-600"><%= item.description %></p>
+                            <div class="mt-5 flex items-center justify-between text-sm font-bold text-stone-500">
+                                <span><%= item.prepTime %></span>
+                                <span class="rounded-full <%= item.status === 'Limited' ? 'bg-amber-100 text-amber-800' : 'bg-emerald-100 text-emerald-800' %> px-3 py-1"><%= item.status %></span>
+                            </div>
+                            <a href="/menu/<%= item.slug %>" class="mt-5 inline-flex rounded-full border border-stone-300 px-4 py-2 text-sm font-bold text-stone-700 transition hover:border-stone-950 hover:text-stone-950">View details</a>
+                        </div>
+                    </article>
+                <% }) %>
+            </div>
+        </section>
+    </main>
+
+    <%- include("partials/footer") %>
+</body>
+</html>

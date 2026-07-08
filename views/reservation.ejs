@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve | TableMint</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="min-h-screen bg-stone-50 text-stone-950">
+    <%- include("partials/navbar") %>
+
+    <main>
+        <section class="mx-auto grid max-w-7xl gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
+            <div class="rounded-lg bg-stone-950 p-8 text-white">
+                <p class="text-sm font-bold text-emerald-300">Reservations</p>
+                <h1 class="mt-2 text-4xl font-black sm:text-5xl">Book your table for tonight.</h1>
+                <p class="mt-5 text-base leading-7 text-stone-300">Choose your preferred date, time, party size, and table style — we'll take care of the rest..</p>
+                <div class="mt-8 grid gap-4">
+                    <div class="rounded-lg border border-white/15 bg-white/10 p-4">
+                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-300">Address</p>
+                        <p class="mt-2 font-bold">18 Market Lane, Downtown</p>
+                    </div>
+                    <div class="rounded-lg border border-white/15 bg-white/10 p-4">
+                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-300">Hours</p>
+                        <p class="mt-2 font-bold">Daily, 5 PM - 11 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <form action="/reservation" method="POST" class="rounded-lg border border-stone-200 bg-white p-6 shadow-sm">
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <label class="block">
+                        <span class="text-sm font-bold text-stone-700">Full name</span>
+                        <input name="name" type="text" placeholder="Your Good Name" class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-bold text-stone-700">Phone</span>
+                        <input name="phone" type="tel" placeholder="+91" class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-bold text-stone-700">Date</span>
+                        <input name="date" type="date" class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-bold text-stone-700">Time</span>
+                        <select name="time" class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                            <option>6:00 PM</option>
+                            <option>7:00 PM</option>
+                            <option>8:00 PM</option>
+                            <option>9:00 PM</option>
+                        </select>
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-bold text-stone-700">Guests</span>
+                        <select name="guests" class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                            <option value="2">2 guests</option>
+                            <option value="3">3 guests</option>
+                            <option value="4">4 guests</option>
+                            <option value="5">5 guests</option>
+                            <option value="6">6 guests</option>
+                        </select>
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-bold text-stone-700">Table style</span>
+                        <select name="table" class="mt-2 w-full rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100">
+                            <option>Indoor dining</option>
+                            <option>Window table</option>
+                            <option>Chef counter</option>
+                            <option>Outdoor patio</option>
+                        </select>
+                    </label>
+                </div>
+                <label class="mt-4 block">
+                    <span class="text-sm font-bold text-stone-700">Special request</span>
+                    <textarea name="request" rows="5" placeholder="Birthday dinner, quiet table, allergy notes..." class="mt-2 w-full resize-none rounded-lg border border-stone-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100"></textarea>
+                </label>
+                <button type="submit" class="mt-5 w-full rounded-lg bg-stone-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-emerald-700">Confirm reservation</button>
+            </form>
+        </section>
+    </main>
+
+    <%- include("partials/footer") %>
+</body>
+</html>

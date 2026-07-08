@@ -1,0 +1,172 @@
+[
+    {
+        "id": "83472915",
+        "slug": "smoked-paneer-tikka",
+        "name": "Smoked Paneer Tikka",
+        "category": "Main",
+        "price": "$18",
+        "prepTime": "1 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+        "description": "Char-grilled paneer served with mint chutney.",
+        "detail": "Marinated paneer cubes grilled to perfection with Indian spices.",
+        "tags": [
+            "Vegetarian",
+            "Indian",
+            "Popular"
+        ]
+    },
+    {
+        "id": "19284756",
+        "slug": "crispy-chicken-burger",
+        "name": "Crispy Chicken Burger",
+        "category": "Main",
+        "price": "$12",
+        "prepTime": "12 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+        "description": "Crispy chicken fillet with lettuce and sauce.",
+        "detail": "Served with house fries and signature garlic mayo.",
+        "tags": [
+            "Chicken",
+            "Fast Food",
+            "Best Seller"
+        ]
+    },
+    {
+        "id": "65748392",
+        "slug": "margherita-pizza",
+        "name": "Margherita Pizza",
+        "category": "Main",
+        "price": "$16",
+        "prepTime": "20 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591",
+        "description": "Classic pizza with mozzarella and basil.",
+        "detail": "Stone-baked pizza with fresh tomato sauce and basil leaves.",
+        "tags": [
+            "Italian",
+            "Vegetarian",
+            "Classic"
+        ]
+    },
+    {
+        "id": "48392017",
+        "slug": "caesar-salad",
+        "name": "Caesar Salad",
+        "category": "Starter",
+        "price": "$10",
+        "prepTime": "8 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1546793665-c74683f339c1",
+        "description": "Fresh romaine lettuce with Caesar dressing.",
+        "detail": "Topped with parmesan cheese, croutons, and house dressing.",
+        "tags": [
+            "Healthy",
+            "Fresh",
+            "Salad"
+        ]
+    },
+    {
+        "id": "27584931",
+        "slug": "chocolate-lava-cake",
+        "name": "Chocolate Lava Cake",
+        "category": "Dessert",
+        "price": "$9",
+        "prepTime": "10 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c",
+        "description": "Warm chocolate cake with molten center.",
+        "detail": "Served with vanilla ice cream and chocolate drizzle.",
+        "tags": [
+            "Dessert",
+            "Chocolate",
+            "Sweet"
+        ]
+    },
+    {
+        "id": "91837465",
+        "slug": "mango-cheesecake",
+        "name": "Mango Cheesecake",
+        "category": "Dessert",
+        "price": "$8",
+        "prepTime": "7 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e",
+        "description": "Creamy cheesecake topped with mango puree.",
+        "detail": "Made with fresh seasonal mangoes and cream cheese.",
+        "tags": [
+            "Dessert",
+            "Fruity",
+            "Chef Special"
+        ]
+    },
+    {
+        "id": "56473829",
+        "slug": "fresh-lime-soda",
+        "name": "Fresh Lime Soda",
+        "category": "Drink",
+        "price": "$4",
+        "prepTime": "3 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd",
+        "description": "Refreshing sparkling lime drink.",
+        "detail": "Made with fresh lime juice and chilled soda water.",
+        "tags": [
+            "Drink",
+            "Refreshing",
+            "Summer"
+        ]
+    },
+    {
+        "id": "84736291",
+        "slug": "cold-coffee-float",
+        "name": "Cold Coffee Float",
+        "category": "Drink",
+        "price": "$6",
+        "prepTime": "5 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+        "description": "Iced coffee topped with vanilla ice cream.",
+        "detail": "Rich coffee blended with milk and served chilled.",
+        "tags": [
+            "Coffee",
+            "Cold Drink",
+            "Sweet"
+        ]
+    },
+    {
+        "id": "39182746",
+        "name": "Garlic Butter Prawns",
+        "slug": "garlic-butter-prawns",
+        "category": "Starter",
+        "price": "$14",
+        "prepTime": "15 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38",
+        "description": "Juicy prawns tossed in garlic butter sauce.",
+        "detail": "Pan-seared prawns finished with parsley and lemon.",
+        "tags": [
+            "Vegetarian",
+            "Popular",
+            "Indian"
+        ]
+    },
+    {
+        "id": "0.18915351036529282",
+        "name": "Spicy Hakka Noodles",
+        "slug": "spicy-hakka-noodles",
+        "category": "Main",
+        "price": "$15",
+        "prepTime": "50 min",
+        "status": "Available",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
+        "description": "Wok-tossed noodles with vegetables and spicy Asian sauces.",
+        "detail": "Prepared with fresh vegetables, soy sauce, chili garlic paste, and spring onions.",
+        "tags": [
+            "Vegetarian",
+            "Popular",
+            "Indian"
+        ]
+    }
+]

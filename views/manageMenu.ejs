@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Menu | TableMint</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+
+<body class="min-h-screen bg-stone-50 text-stone-950">
+    <%- include("partials/navbar") %>
+
+        <main>
+            <section class="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
+                <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="text-sm font-bold text-emerald-700">Manager view</p>
+                        <h1 class="mt-1 text-4xl font-black sm:text-5xl">Menu management.</h1>
+                        <p class="mt-4 max-w-2xl text-base leading-7 text-stone-600">Keep your menu fresh — update dishes, prices, and availability anytime.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a href="/menu"
+                            class="w-fit rounded-full bg-stone-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700">View
+                            public menu</a>
+                        <a href="/add-menu"
+                            class="w-fit rounded-full bg-stone-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-emerald-700">Add Menu</a>
+                    </div>
+
+                </div>
+
+                <section class="mt-8">
+                    <section class="overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm">
+                        <div class="border-b border-stone-200 p-5">
+                            <p class="text-sm font-bold text-stone-500">Current live menu</p>
+                        </div>
+                        <div class="divide-y divide-stone-200">
+                            <% menuItems.forEach((item)=> { %>
+                                <div class="grid gap-4 p-5 md:grid-cols-[80px_1fr_auto] md:items-center">
+                                    <img src="<%= item.image %>" alt="<%= item.name %>"
+                                        class="h-20 w-20 rounded-lg object-cover">
+                                    <div>
+                                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">
+                                            <%= item.category %>
+                                        </p>
+                                        <h2 class="mt-1 text-lg font-black">
+                                            <%= item.name %>
+                                        </h2>
+                                        <p class="mt-1 text-sm text-stone-600">
+                                            <%= item.description %>
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2 md:justify-end">
+                                        <span
+                                            class="rounded-full bg-stone-100 px-3 py-1 text-sm font-bold text-stone-700">
+                                            <%= item.price %>
+                                        </span>
+                                        <span
+                                            class="rounded-full bg-stone-100 px-3 py-1 text-sm font-bold text-stone-700">
+                                            <%= item.prepTime %>
+                                        </span>
+                                        <a href="/menu/<%= item.slug %>"
+                                            class="rounded-full border border-stone-300 px-3 py-1 text-sm font-bold text-stone-700 hover:border-stone-950">Open</a>
+                                         <a href="/edit-menu/<%= item.id %>?editable=true" type="submit"
+                                                class="rounded-full border border-stone-300 px-3 py-1 text-sm font-bold text-stone-700 hover:border-stone-950">Edit</a>
+                                        <form action="/delete-item/<%= item.id %>" method="POST">
+                                            <button type="submit"
+                                                class="rounded-full border border-stone-300 px-3 py-1 text-sm font-bold text-stone-700 hover:border-stone-950">Delete</button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                                <% }) %>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </main>
+
+        <%- include("partials/footer") %>
+</body>
+
+</html>
